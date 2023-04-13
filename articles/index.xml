@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homepage on Personal Digital Garden</title>
-    <link>https://natsu2711.github.io/</link>
-    <description>Recent content in Homepage on Personal Digital Garden</description>
+    <title>Articles on Personal Digital Garden</title>
+    <link>https://natsu2711.github.io/articles/</link>
+    <description>Recent content in Articles on Personal Digital Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://natsu2711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://natsu2711.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Theme Installation</title>
       <link>https://natsu2711.github.io/articles/installation/</link>
@@ -83,17 +83,6 @@ Google Analytics v3 (analytics.js) googleAnalytics = &amp;#39;UA-PROPERTY_ID&amp
       <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://natsu2711.github.io/articles/metatags/</guid>
-      <description>Metatags are used to provide additional information about the page, usualy used by search engines and social media websites / apps. It allows to customize your page&amp;rsquo;s title, description, preview image and more.
-Configure default tags // config.toml
-title = &amp;#34;Personal Digital Garden&amp;#34; [Params] description = &amp;#34;My Digital Garden on the Internet&amp;#34; images = [&amp;#39;/digital-garden-logo.png&amp;#39;] Setting the above values will be used as default for all pages unless its overridden in a specific page&amp;rsquo;s markdown.</description>
-    </item>
-    
-    <item>
-      <title>7. Metatags</title>
-      <link>https://natsu2711.github.io/portfolio/metatags/</link>
-      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://natsu2711.github.io/portfolio/metatags/</guid>
       <description>Metatags are used to provide additional information about the page, usualy used by search engines and social media websites / apps. It allows to customize your page&amp;rsquo;s title, description, preview image and more.
 Configure default tags // config.toml
 title = &amp;#34;Personal Digital Garden&amp;#34; [Params] description = &amp;#34;My Digital Garden on the Internet&amp;#34; images = [&amp;#39;/digital-garden-logo.png&amp;#39;] Setting the above values will be used as default for all pages unless its overridden in a specific page&amp;rsquo;s markdown.</description>
