@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>newsletter on Natsu&#39;s Blog</title>
+    <link>https://natsu2711.github.io/tags/newsletter/</link>
+    <description>Recent content in newsletter on Natsu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 13 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://natsu2711.github.io/tags/newsletter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>今日新闻</title>
+      <link>https://natsu2711.github.io/docs/news/</link>
+      <pubDate>Tue, 24 Jan 2023 14:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/docs/news/</guid>
+      <description>&lt;p&gt;Welcome to the Mainroad theme documentation. This quick start guide covers Mainroad theme installation and minimal
+configuration and is intended for intermediate to advanced users. To understand this guide, you need to be familiar
+with the &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; static site generator.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>今日新闻</title>
+      <link>https://natsu2711.github.io/post/2023-04-13news/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/post/2023-04-13news/</guid>
+      <description>Step 1. 我们多么像猕猴桃 Go to 我们多么像猕猴桃 and download the appropriate version for your OS and architecture.</description>
+    </item>
+    
+    <item>
+      <title>格式</title>
+      <link>https://natsu2711.github.io/post/basic-elements/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/post/basic-elements/</guid>
+      <description>&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

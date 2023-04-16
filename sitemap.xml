@@ -2,43 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://natsu2711.github.io/articles/installation/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+    <loc>https://natsu2711.github.io/docs/news/</loc>
+    <lastmod>2023-01-24T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://natsu2711.github.io/articles/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+    <loc>https://natsu2711.github.io/docs/it/</loc>
+    <lastmod>2023-01-24T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://natsu2711.github.io/</loc>
-    <lastmod>2021-12-19T00:00:00+00:00</lastmod>
+    <loc>https://natsu2711.github.io/docs/cg/</loc>
+    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://natsu2711.github.io/articles/structure/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <loc>https://natsu2711.github.io/docs/music/</loc>
+    <lastmod>2023-01-24T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://natsu2711.github.io/articles/primary-menu/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/articles/social-menu/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/articles/newsletter/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/articles/google-analytics/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/articles/metatags/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/portfolio/metatags/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://natsu2711.github.io/portfolio/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
+    <loc>https://natsu2711.github.io/docs/faq/</loc>
+    <lastmod>2022-01-24T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://natsu2711.github.io/categories/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://natsu2711.github.io/stack/</loc>
+    <loc>https://natsu2711.github.io/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/newsletter/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/post/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://natsu2711.github.io/tags/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/post/2023-04-13news/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/%E6%96%B0%E9%97%BB/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/%E6%96%B0%E9%97%BB%E8%B5%84%E8%AE%AF/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/post/basic-elements/</loc>
+    <lastmod>2023-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/docs/</loc>
+    <lastmod>2023-01-24T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2023-01-24T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/about/</loc>
+    <lastmod>2022-01-25T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/post/getting-started-with-hugo/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/go/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/golang/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/golang/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/hugo/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/post/hugo-template-primer/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/tags/%E6%8B%89%E6%BC%AB%E7%94%BB/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/%E6%95%85%E4%BA%8B%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://natsu2711.github.io/categories/%E7%94%BB%E7%94%BB%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
 </urlset>

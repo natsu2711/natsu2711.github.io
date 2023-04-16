@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Personal Digital Garden</title>
+    <title>Tags on Natsu&#39;s Blog</title>
     <link>https://natsu2711.github.io/tags/</link>
-    <description>Recent content in Tags on Personal Digital Garden</description>
+    <description>Recent content in Tags on Natsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://natsu2711.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 13 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://natsu2711.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>newsletter</title>
+      <link>https://natsu2711.github.io/tags/newsletter/</link>
+      <pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/newsletter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>音乐相关</title>
+      <link>https://natsu2711.github.io/tags/%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Tue, 24 Jan 2023 14:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/%E9%9F%B3%E4%B9%90%E7%9B%B8%E5%85%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://natsu2711.github.io/tags/development/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://natsu2711.github.io/tags/go/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://natsu2711.github.io/tags/golang/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://natsu2711.github.io/tags/hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>拉漫画</title>
+      <link>https://natsu2711.github.io/tags/%E6%8B%89%E6%BC%AB%E7%94%BB/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://natsu2711.github.io/tags/%E6%8B%89%E6%BC%AB%E7%94%BB/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
