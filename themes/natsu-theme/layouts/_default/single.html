@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main>
+    <div class="content-wrapper">
+        <section class="posts-section">
+            <a href="/" class="back-btn">← 返回列表</a>
+            <article class="post-content">
+                <h1>{{ .Title }}</h1>
+                <div class="post-meta">
+                    <span>{{ .Date.Format "2006-01-02" }}</span>
+                    {{ with .Params.categories }}
+                    <span>分类：{{ delimit . ", " }}</span>
+                    {{ end }}
+                </div>
+                {{ .Content }}
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="categories">
+                <h3>CATEGORIES</h3>
+                <ul>
+                    {{ range .Site.Taxonomies.categories }}
+                    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+{{ end }}

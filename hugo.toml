@@ -1,0 +1,18 @@
+baseURL = 'https://natsu2711.github.io/'
+languageCode = 'zh-CN'
+title = "NATSU'S BLOG"
+theme = 'natsu-theme'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[params]
+  description = "我的个人博客"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'monokai'
