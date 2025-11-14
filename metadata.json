@@ -1,0 +1,5 @@
+{
+  "name": "Markdown Blog",
+  "description": "A simple and elegant personal blog application where you can write and manage your posts using Markdown. All data is stored locally in your browser.",
+  "requestFramePermissions": []
+}
