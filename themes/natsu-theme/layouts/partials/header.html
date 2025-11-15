@@ -1,11 +1,10 @@
 <header>
-    <h1>{{ .Site.Title }}</h1>
+    <h1><a href="/" style="color: white; text-decoration: none;">{{ .Site.Title }}</a></h1>
     <nav>
-        <a href="/" class="nav-btn">所有</a>
-        <a href="/categories/CS相关" class="nav-btn">CS相关</a>
-        <a href="/categories/AI相关" class="nav-btn">AI相关</a>
-        <a href="/categories/音乐故事相关" class="nav-btn">音乐故事相关</a>
-        <a href="/categories/数学物理相关" class="nav-btn">数学物理相关</a>
-        <a href="/about" class="nav-btn">ABOUT</a>
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-btn {{ if $.IsMenuCurrent "main" . }}active{{ end }}">
+            {{ .Name }}
+        </a>
+        {{ end }}
     </nav>
 </header>

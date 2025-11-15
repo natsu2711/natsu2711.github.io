@@ -2,25 +2,47 @@
 <main>
     <div class="content-wrapper">
         <section class="posts-section">
-            {{ range .Pages.GroupByDate "2006" }}
-            <div class="year-group">
-                <h2 class="year-title">{{ .Key }}</h2>
-                {{ range .Pages }}
-                <div class="post-item">
-                    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
-                    <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+            {{ if .IsHome }}
+                <!-- 首页：显示所有文章 -->
+                {{ $pages := where .Site.RegularPages "Type" "posts" }}
+                {{ range $pages.GroupByDate "2006" }}
+                <div class="year-group">
+                    <h2 class="year-title">{{ .Key }}</h2>
+                    {{ range .Pages }}
+                    <div class="post-item">
+                        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                    </div>
+                    {{ end }}
                 </div>
                 {{ end }}
-            </div>
+            {{ else }}
+                <!-- 分类/标签页：显示过滤后的文章 -->
+                <h2 class="category-title">{{ .Title }}</h2>
+                {{ range .Pages.GroupByDate "2006" }}
+                <div class="year-group">
+                    <h2 class="year-title">{{ .Key }}</h2>
+                    {{ range .Pages }}
+                    <div class="post-item">
+                        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
             {{ end }}
         </section>
 
         <aside class="sidebar">
             <div class="categories">
-                <h3>CATEGORIES</h3>
+                <h3>TAGS</h3>
                 <ul>
-                    {{ range .Site.Taxonomies.categories }}
-                    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+                    {{ range .Site.Taxonomies.tags }}
+                    <li>
+                        <a href="{{ .Page.Permalink }}">
+                            {{ .Page.Title }} ({{ .Count }})
+                        </a>
+                    </li>
                     {{ end }}
                 </ul>
             </div>

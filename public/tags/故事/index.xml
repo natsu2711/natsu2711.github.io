@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>故事 on NATSU&#39;S BLOG</title>
+    <link>http://localhost:1313/tags/%E6%95%85%E4%BA%8B/</link>
+    <description>Recent content in 故事 on NATSU&#39;S BLOG</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 05 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%95%85%E4%BA%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我最喜欢的音乐故事</title>
+      <link>http://localhost:1313/posts/251114/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/251114/</guid>
+      <description>&lt;p&gt;音乐能触动人心&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

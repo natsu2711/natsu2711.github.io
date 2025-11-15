@@ -6,21 +6,14 @@
     <description>Recent content in AI on NATSU&#39;S BLOG</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>数字绘画入门：Procreate 基础</title>
-      <link>http://localhost:1313/posts/251114/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/251114/</guid>
-      <description>&lt;p&gt;今天分享一下我使用 Procreate 的一些心得&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;基础工具介绍&#34;&gt;基础工具介绍&lt;/h2&gt;&#xA;&lt;p&gt;Procreate 是 iPad 上最流行的绘画软件之一&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;常用笔刷推荐&#34;&gt;常用笔刷推荐&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;墨水笔刷&lt;/li&gt;&#xA;&lt;li&gt;水彩笔刷&lt;/li&gt;&#xA;&lt;li&gt;素描铅笔&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>操作系统门：Procreate 基础</title>
+      <title>深度学习入门</title>
       <link>http://localhost:1313/posts/251112/</link>
-      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/251112/</guid>
-      <description>&lt;p&gt;今天分享一下我使用 Procreate 的一些心得&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;基础工具介绍&#34;&gt;基础工具介绍&lt;/h2&gt;&#xA;&lt;p&gt;Procreate 是 iPad 上最流行的绘画软件之一&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;常用笔刷推荐&#34;&gt;常用笔刷推荐&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;墨水笔刷&lt;/li&gt;&#xA;&lt;li&gt;水彩笔刷&lt;/li&gt;&#xA;&lt;li&gt;素描铅笔&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <description>&lt;p&gt;深度学习是机器学习的一个分支&amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

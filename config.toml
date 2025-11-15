@@ -3,16 +3,52 @@ languageCode = 'zh-CN'
 title = "NATSU'S BLOG"
 theme = 'natsu-theme'
 
+# 启用分类和标签
 [taxonomies]
   category = 'categories'
   tag = 'tags'
 
+# 首页配置
 [params]
   description = "我的个人博客"
+  mainSections = ["posts"]  # 首页显示的内容类型
 
+# Markdown 渲染配置
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
     style = 'monokai'
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    name = "所有"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "CS相关"
+    url = "/categories/CS/"
+    weight = 2
+  
+  [[menu.main]]
+    name = "AI相关"
+    url = "/categories/AI/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "音乐故事相关"
+    url = "/categories/音乐故事/"
+    weight = 4
+  
+  [[menu.main]]
+    name = "数学物理相关"
+    url = "/categories/数学物理/"
+    weight = 5
+  
+  [[menu.main]]
+    name = "ABOUT"
+    url = "/about/"
+    weight = 6

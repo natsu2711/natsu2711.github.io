@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+    <div class="content-wrapper">
+        <section class="posts-section">
+            <h2 class="category-title">所有{{ .Title }}</h2>
+            <div class="tags-cloud">
+                {{ range .Data.Terms.ByCount }}
+                <a href="{{ .Page.Permalink }}" class="tag-item">
+                    {{ .Page.Title }} ({{ .Count }})
+                </a>
+                {{ end }}
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="categories">
+                <h3>TAGS</h3>
+                <ul>
+                    {{ range .Site.Taxonomies.tags }}
+                    <li>
+                        <a href="{{ .Page.Permalink }}">
+                            {{ .Page.Title }} ({{ .Count }})
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+{{ end }}

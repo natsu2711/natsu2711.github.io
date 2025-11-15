@@ -30,6 +30,71 @@ nav {
     flex-wrap: wrap;
 }
 
+/* 导航激活状态 */
+.nav-btn.active {
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+/* 分类标题 */
+.category-title {
+    font-size: 1.8em;
+    color: #5b7a9d;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #5b7a9d;
+}
+
+/* 标签计数 */
+.categories a {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* About 页面样式 */
+.page-content {
+    line-height: 1.8;
+}
+
+.page-content h1 {
+    color: #5b7a9d;
+    margin-bottom: 20px;
+}
+
+.page-content h2 {
+    color: #5b7a9d;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.page-content ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.tag-item {
+    background-color: #5b7a9d;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.95em;
+}
+
+.tag-item:hover {
+    background-color: #4a6a8d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .nav-btn {
     color: #333;
     text-decoration: none;
