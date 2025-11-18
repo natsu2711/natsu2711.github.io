@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NATSU&#39;S BLOG</title>
+    <link>https://natsu2711.github.io/</link>
+    <description>Recent content on NATSU&#39;S BLOG</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 18 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://natsu2711.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最近感悟</title>
+      <link>https://natsu2711.github.io/posts/251118%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251118%E9%9A%8F%E7%AC%94/</guid>
+      <description>&lt;p&gt;最近感悟&lt;/p&gt;&#xA;&lt;p&gt;也不知道用什么格式，最近&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微积分的美妙之处</title>
+      <link>https://natsu2711.github.io/posts/251113/</link>
+      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251113/</guid>
+      <description>&lt;p&gt;微积分是数学的重要分支&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Go语言并发编程</title>
+      <link>https://natsu2711.github.io/posts/251115/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251115/</guid>
+      <description>&lt;p&gt;Go 语言的并发模型基于 CSP&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;goroutine-基础&#34;&gt;Goroutine 基础&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello from goroutine&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>操作系统的学习</title>
+      <link>https://natsu2711.github.io/posts/251116/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251116/</guid>
+      <description>&lt;p&gt;今天学习了操作系统&lt;/p&gt;&#xA;&lt;h2 id=&#34;goroutine-基础&#34;&gt;Goroutine 基础&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello from goroutine&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>深度学习入门</title>
+      <link>https://natsu2711.github.io/posts/251112/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251112/</guid>
+      <description>&lt;p&gt;深度学习是机器学习的一个分支&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>我最喜欢的音乐故事</title>
+      <link>https://natsu2711.github.io/posts/251114/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/posts/251114/</guid>
+      <description>&lt;p&gt;音乐能触动人心&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://natsu2711.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://natsu2711.github.io/about/</guid>
+      <description>&lt;h1 id=&#34;关于我&#34;&gt;关于我&lt;/h1&gt;&#xA;&lt;p&gt;你好！我是 Natsu。&lt;/p&gt;&#xA;&lt;h2 id=&#34;联系方式&#34;&gt;联系方式&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Email: &lt;a href=&#34;mailto:natsu2711@outlook.com&#34;&gt;natsu2711@outlook.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/natsu2711&#34;&gt;https://github.com/natsu2711&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;编程&lt;/li&gt;&#xA;&lt;li&gt;绘画&lt;/li&gt;&#xA;&lt;li&gt;音乐&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;这个博客&#34;&gt;这个博客&lt;/h2&gt;&#xA;&lt;p&gt;这是我的个人技术博客，主要记录：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;编程学习笔记&lt;/li&gt;&#xA;&lt;li&gt;数学物理思考&lt;/li&gt;&#xA;&lt;li&gt;生活随笔&lt;/li&gt;&#xA;&lt;li&gt;创作分享&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
