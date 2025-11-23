@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATSU&#39;S BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+    <h1><a href="/" style="color: white; text-decoration: none;">NATSU&#39;S BLOG</a></h1>
+    <nav>
+        
+        <a href="/" class="nav-btn ">
+            所有
+        </a>
+        
+        <a href="/categories/cs/" class="nav-btn ">
+            CS相关
+        </a>
+        
+        <a href="/categories/ai/" class="nav-btn ">
+            AI相关
+        </a>
+        
+        <a href="/categories/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86/" class="nav-btn ">
+            数学物理相关
+        </a>
+        
+        <a href="/categories/%E9%9F%B3%E4%B9%90%E6%95%85%E4%BA%8B/" class="nav-btn ">
+            音乐故事相关
+        </a>
+        
+        <a href="/categories/%E7%94%9F%E6%B4%BB%E6%88%90%E9%95%BF/" class="nav-btn ">
+            生活成长相关
+        </a>
+        
+        <a href="/about/" class="nav-btn ">
+            ABOUT
+        </a>
+        
+    </nav>
+</header>
+    
+<main>
+    <div class="content-wrapper">
+        <section class="posts-section">
+            <a href="/" class="back-btn">← 返回列表</a>
+            <article class="post-content">
+                <h1>今日sql和git的学习复盘</h1>
+                <div class="post-meta">
+                    <span>2025-11-23</span>
+                    
+                    <span>分类：CS</span>
+                    
+                </div>
+                <h3 id="一总述概览">一、总述/概览</h3>
+<p><strong>核心论题</strong>：<strong>透过现象看本质的底层掌控力。</strong>
+今天的学习实际上是在打破三个领域的“黑盒”：</p>
+<ol>
+<li><strong>打破 AI 框架黑盒</strong>：通过手写 LightInfer，不再依赖 PyTorch 高层封装，而是直接用 C++ 和 Triton 控制内存映射（Mmap）、显存分页（PagedAttention）和 GPU 计算内核。</li>
+<li><strong>打破 Git 历史黑盒</strong>：通过 Rebase 和 Force Push 修正历史提交，理解 Git 的存储机制。</li>
+<li><strong>打破 SQL 执行黑盒</strong>：深刻理解“代码书写顺序”与“机器执行顺序”的矛盾，解决复杂查询问题。</li>
+</ol>
+<hr>
+<h3 id="二按照内容的内在逻辑自然分段">二、按照内容的内在逻辑自然分段</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">模块</th>
+          <th style="text-align: left">核心内容提炼</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>1. 高性能推理引擎构建</strong><br><code>[LightInfer 项目]</code></td>
+          <td style="text-align: left"><strong>从零构建 LLM 推理底座</strong>：通过 C++ 管理内存（Mmap/PagedAttention）和调度，利用 Python/Triton 编写高性能算子（FlashAttention），解决大模型推理的显存碎片和 IO 瓶颈问题。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>2. 版本控制救火实战</strong><br><code>[Git 进阶]</code></td>
+          <td style="text-align: left"><strong>Git 历史回溯与修复</strong>：解决了错误提交超大二进制文件导致无法 Push 的问题，掌握了交互式变基（Rebase）和强制推送（Force Push）的高危操作流程。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>3. 数据查询逻辑内功</strong><br><code>[SQL 核心]</code></td>
+          <td style="text-align: left"><strong>SQL 执行顺序与窗口函数</strong>：厘清了 FROM -&gt; WHERE -&gt; GROUP BY -&gt; HAVING -&gt; SELECT 的底层流水线，明确了窗口函数（Rank）为何不能直接用于 Where 子句。</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="三核心知识点问题与逻辑链路">三、核心知识点、问题与逻辑链路</h3>
+<h4 id="1-核心知识点映射表">1. 核心知识点映射表</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">序号</th>
+          <th style="text-align: left">知识点</th>
+          <th style="text-align: left">定义/关键技术</th>
+          <th style="text-align: left">直观意义 (类比解释)</th>
+          <th style="text-align: left">功能作用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left"><strong>Mmap (内存映射)</strong></td>
+          <td style="text-align: left"><code>mmap</code> 系统调用，将文件映射到虚拟地址空间。</td>
+          <td style="text-align: left"><strong>传送门</strong>：不用把货物（模型权重）搬进仓库（内存），直接在仓库墙上开个门连通货船，用到哪件货直接拿。</td>
+          <td style="text-align: left">实现“零拷贝”加载大模型，OS 自动处理缺页中断，极大减少冷启动时间。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left"><strong>PagedAttention</strong></td>
+          <td style="text-align: left">将连续的 KV Cache 显存需求打散为非连续的 Block。</td>
+          <td style="text-align: left"><strong>代客泊车</strong>：以前车队（长文本）必须停在连续车位，现在可以拆散停在停车场的任意空位，通过记录本（页表）找车。</td>
+          <td style="text-align: left">彻底消除显存碎片，显存利用率从 &lt;60% 提升至接近 100%，大幅提升 Batch Size。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left"><strong>Triton</strong></td>
+          <td style="text-align: left">OpenAI 推出的类 Python GPU 编程语言。</td>
+          <td style="text-align: left"><strong>自动挡跑车</strong>：不用像 CUDA 那样手动换挡（管理 Shared Memory/Barriers），只需踩油门（写计算逻辑），编译器自动优化。</td>
+          <td style="text-align: left">降低高性能算子（如 FlashAttention）的开发门槛，实现块级并行。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left"><strong>Continuous Batching</strong></td>
+          <td style="text-align: left">迭代级调度（Iteration-level scheduling）。</td>
+          <td style="text-align: left"><strong>流水线作业</strong>：不再等一批人全吃完才收盘子，而是谁吃完谁走，新客人立马补位。</td>
+          <td style="text-align: left">消除长短序列混合推理时的 GPU 空转（气泡），始终保持计算单元忙碌。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left"><strong>SQL Window Function</strong></td>
+          <td style="text-align: left"><code>RANK() OVER (PARTITION BY ...)</code>。</td>
+          <td style="text-align: left"><strong>透视镜</strong>：在不压缩数据行的情况下，给每个人贴上他在班级里的排名标签。</td>
+          <td style="text-align: left">用于组内排名、累计求和、环比增长，且保留原始数据明细。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left"><strong>Git Rebase</strong></td>
+          <td style="text-align: left"><code>git rebase -i</code> (交互式变基)。</td>
+          <td style="text-align: left"><strong>剪辑师</strong>：把拍好的电影胶卷剪开，删掉穿帮的镜头（大文件），再重新拼接起来。</td>
+          <td style="text-align: left">修改提交历史，移除误提交的文件或合并零碎提交。</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="2-核心问题-critical-questions">2. 核心问题 (Critical Questions)</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">核心问题</th>
+          <th style="text-align: left">动机 (痛点)</th>
+          <th style="text-align: left">直观意义</th>
+          <th style="text-align: left">区别与答案 (思维链路)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>为什么 PyTorch 推理慢，需要 C++ 重构？</strong></td>
+          <td style="text-align: left">Python 解释器开销大（Overhead），尤其在 For 循环解码时。</td>
+          <td style="text-align: left"><strong>指挥官太慢</strong>：士兵（GPU）动作很快，但指挥官（Python）下令太慢，导致士兵一直在等命令。</td>
+          <td style="text-align: left"><strong>答案</strong>：C++ 充当没有任何延迟的指挥官，只在极少量控制逻辑上使用 Python，让 GPU 始终满载。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>FlashAttention 到底快在哪里？</strong></td>
+          <td style="text-align: left">传统 Attention 频繁读写 HBM（高带宽内存），受限于内存带宽。</td>
+          <td style="text-align: left"><strong>厨房动线优化</strong>：传统做法是切完菜放回冰箱（HBM），炒的时候再拿；FlashAttn 是切完直接扔进锅里（SRAM），减少跑冰箱的次数。</td>
+          <td style="text-align: left"><strong>答案</strong>：通过<strong>分块 (Tiling)</strong> 和<strong>重计算 (Recomputation)</strong>，在 SRAM（缓存）中完成 QK 乘法和 Softmax，减少了对 HBM 的读写次数（IO Bound 转 Compute Bound）。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>为什么不能在 WHERE 子句中直接用 RANK()？</strong></td>
+          <td style="text-align: left">想筛选“排名前三”，写 <code>WHERE rank &lt;= 3</code> 报错。</td>
+          <td style="text-align: left"><strong>时间悖论</strong>：你还没出生，怎么能参加高考？</td>
+          <td style="text-align: left"><strong>链路</strong>：SQL 执行顺序是 WHERE (筛选原始人) -&gt; GROUP BY -&gt; SELECT (计算排名)。WHERE 执行时，RANK 还没算出来。<strong>解法</strong>：用子查询/CTE 先把排名算成普通列，再在最外层过滤。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Git 误传大文件，为什么要用 Rebase 而不是直接 Delete？</strong></td>
+          <td style="text-align: left">直接删除产生新提交，历史记录里大文件还在，仓库体积依然巨大。</td>
+          <td style="text-align: left"><strong>掩耳盗铃</strong>：你只是把垃圾扔到了床底下（历史记录），没扔出房间。</td>
+          <td style="text-align: left"><strong>答案</strong>：必须修改“历史”，把包含该文件的那个 Commit 彻底修改或丢弃，才能真正瘦身。操作后必须 Force Push。</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="3-逻辑链路-思维推导">3. 逻辑链路 (思维推导)</h4>
+<p><strong>链路一：LightInfer 端到端推理流水线 (The Inference Loop)</strong>
+这是一条“压榨硬件性能”的工程链路：</p>
+<ol>
+<li><strong>Initialize (启动)</strong>：<code>MmapLoader</code> 建立文件映射 -&gt; 瞬间获得百 GB 模型的虚拟地址指针（无 IO 等待）。</li>
+<li><strong>Prompt Phase (预填充)</strong>：请求进入 -&gt; <code>BlockManager</code> 根据 Prompt 长度预分配 N 个非连续 Block -&gt; <code>Triton Kernel</code> 并行计算 Prompt 的 KV Cache 并填入显存。</li>
+<li><strong>Decode Phase (循环解码)</strong>：
+<ul>
+<li><strong>C++ Scheduler</strong>: 检查队列，组装当前 Batch。</li>
+<li><strong>Step</strong>: 调用 <code>LlamaModel.forward</code>。</li>
+<li><strong>GPU Compute</strong>:
+<ul>
+<li>Embedding/RoPE (位置编码)。</li>
+<li><strong>FlashAttention</strong>: 读取 Block Table -&gt; 加载非连续 KV Block 到 SRAM -&gt; 计算 Attention Score。</li>
+<li>MLP (矩阵乘)。</li>
+</ul>
+</li>
+<li><strong>Sampling</strong>: 采样出 Next Token。</li>
+<li><strong>Memory Update</strong>: <code>BlockManager</code> 为新 Token 分配 1 个新 Block (如果旧的满了)。</li>
+<li><strong>Loop</strong>: 回到 Step，直到生成结束符号。</li>
+</ul>
+</li>
+</ol>
+<p><strong>链路二：SQL 查询执行的真实生命周期</strong>
+这是一条“数据筛选漏斗”链路：</p>
+<ol>
+<li><strong>FROM/JOIN</strong>: 拿到所有数据源，生成笛卡尔积（如果 JOIN 条件不当）。</li>
+<li><strong>WHERE</strong>: <strong>行级过滤</strong>。此时数据是散乱的，不能用聚合函数（如 <code>SUM</code>），因为组还没分；也不能用窗口函数（如 <code>RANK</code>），因为列还没生成。</li>
+<li><strong>GROUP BY</strong>: <strong>压缩阶段</strong>。将多行压缩成一行（组）。</li>
+<li><strong>HAVING</strong>: <strong>组级过滤</strong>。剔除不满足条件的组（如 <code>SUM(sales) &gt; 1000</code>）。</li>
+<li><strong>SELECT</strong>: <strong>投影与计算</strong>。此时才开始计算 <code>RANK() OVER...</code> 等窗口函数。</li>
+<li><strong>ORDER BY / LIMIT</strong>: <strong>最终修饰</strong>。</li>
+</ol>
+<p><strong>链路三：Git 历史修正工作流</strong></p>
+<ol>
+<li><strong>事故现场</strong>：<code>git add .</code> 把 1GB 的日志文件 commit 了。</li>
+<li><strong>暂停</strong>：不要 push，不要慌。</li>
+<li><strong>回溯</strong>：<code>git rebase -i HEAD~N</code> (N是回溯的步数)。</li>
+<li><strong>编辑</strong>：在编辑器中把那个 commit 的前缀从 <code>pick</code> 改为 <code>edit</code> 或 <code>drop</code>。</li>
+<li><strong>修正</strong>：
+<ul>
+<li>如果是 <code>edit</code>: <code>git reset HEAD^</code> (撤销提交但保留文件) -&gt; <code>rm large_file</code> -&gt; <code>git add .</code> -&gt; <code>git commit --amend</code>。</li>
+<li>如果是 <code>drop</code>: 直接丢弃该次提交。</li>
+</ul>
+</li>
+<li><strong>继续</strong>：<code>git rebase --continue</code>。</li>
+<li><strong>覆盖</strong>：<code>git push origin branch_name --force</code>。</li>
+</ol>
+<hr>
+<h3 id="四费曼式讲解">四、费曼式讲解</h3>
+<p><strong>1. 讲解 LightInfer (高性能推理引擎)</strong>
+想象你要经营一家<strong>超高效率的自助餐厅（GPU）</strong>：</p>
+<ul>
+<li><strong>Python</strong> 是个啰嗦的领班，以前每上一道菜都要他亲自喊话，厨师（GPU核心）大部分时间都在等他说话。</li>
+<li><strong>C++</strong> 是个冷酷的机器人领班，语速极快，毫无废话，让厨师手都不停。</li>
+<li><strong>Mmap (内存映射)</strong> 是<strong>任意门</strong>。食材（模型参数）不需要用卡车一车车拉进厨房（加载内存），而是厨房墙上开了无数个任意门，厨师手伸过去就能拿到需要的食材。</li>
+<li><strong>PagedAttention</strong> 是<strong>拼桌艺术</strong>。以前客人（KV Cache）来了，非要占一张十人长桌，哪怕只有两个人。现在我们把桌子切成小方块，两个人就给两块，分散坐在餐厅各个角落，通过领班手里的**座位表（Page Table）**来上菜。餐厅容量瞬间翻倍。</li>
+<li><strong>Triton</strong> 是<strong>智能炒菜机</strong>。以前做复杂菜式（FlashAttention）需要手写汇编级的菜谱（CUDA），现在只要设定好温度和流程，机器自动处理火候，做出来的菜又快又香。</li>
+</ul>
+<p><strong>2. 讲解 SQL 执行顺序</strong>
+你想选出“每个班级的前三名”：</p>
+<ul>
+<li><strong>WHERE</strong> 是校门口的保安。他只拦没穿校服的人（过滤原始行），但他不知道谁考了多少分，更不知道排名。</li>
+<li><strong>GROUP BY</strong> 是分班。把学生按班级聚在一起。</li>
+<li><strong>SELECT (窗口函数)</strong> 是班主任。他在班里根据成绩给每个人贴上“第1名”、“第2名”的贴纸。</li>
+<li><strong>外部查询 (WHERE rank &lt;= 3)</strong> 是领奖台。只有身上贴着前3名贴纸的人，才能上台。
+<ul>
+<li><em>关键点</em>：保安（WHERE）在校门口，班主任（SELECT）在教室里。保安不可能看到教室里才贴上的排名贴纸，所以不能在 WHERE 里筛排名。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="五压缩要点-cheat-sheet">五、压缩要点 (Cheat Sheet)</h3>
+<ol>
+<li><strong>LightInfer 架构三支柱</strong>：
+<ul>
+<li><strong>脑 (C++)</strong>：<code>MmapLoader</code> (零拷贝加载), <code>BlockManager</code> (分页显存管理), <code>Scheduler</code> (批处理)。</li>
+<li><strong>肉 (Triton)</strong>：<code>FlashAttention</code> (分块计算, SRAM &gt; HBM), <code>RMSNorm</code>。</li>
+<li><strong>魂 (OS)</strong>：利用 Linux <code>mmap</code> 和 <code>page table</code> 机制优化 IO 和内存。</li>
+</ul>
+</li>
+<li><strong>Git 救命指令</strong>：
+<ul>
+<li><code>git rebase -i</code>：交互式修改历史（删大文件、合并提交）。</li>
+<li><code>git push -f</code>：强制覆盖远程（慎用）。</li>
+<li><code>Detached HEAD</code>：Rebase 过程中的中间状态，只做 <code>rebase --continue/abort</code>，别乱 commit。</li>
+</ul>
+</li>
+<li><strong>SQL 六字真言</strong>：
+<ul>
+<li><strong>顺序</strong>：FROM -&gt; WHERE -&gt; GROUP -&gt; HAVING -&gt; SELECT -&gt; ORDER。</li>
+<li><strong>铁律</strong>：WHERE 里不能有聚合（SUM）和窗口（RANK）；聚合必须对应 GROUP BY；窗口函数在 SELECT 阶段生成。</li>
+<li><strong>JOIN</strong>：无 ON 变笛卡尔积（行数爆炸）；Left Join 保留左表。</li>
+</ul>
+</li>
+</ol>
+<p><strong>今日一句话总结</strong>：
+<strong>无论是写 C++ 榨干 GPU 性能，还是写 SQL 筛选数据，亦或是用 Git 管理代码，高手的核心在于理解“数据在底层是如何流转和存储的”，而不是仅仅停留在语法表面。</strong></p>
+
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="categories">
+                <h3>CATEGORIES</h3>
+                <ul>
+                    
+                    <li><a href="http://localhost:1313/categories/ai/">AI</a></li>
+                    
+                    <li><a href="http://localhost:1313/categories/cs/">CS</a></li>
+                    
+                    <li><a href="http://localhost:1313/categories/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86/">数学物理</a></li>
+                    
+                    <li><a href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%88%90%E9%95%BF/">生活成长</a></li>
+                    
+                    <li><a href="http://localhost:1313/categories/%E9%9F%B3%E4%B9%90%E6%95%85%E4%BA%8B/">音乐故事</a></li>
+                    
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>
+
+</body>
+</html>
