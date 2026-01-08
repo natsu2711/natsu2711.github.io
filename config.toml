@@ -54,6 +54,16 @@ theme = 'natsu-theme'
     weight = 6
   
   [[menu.main]]
+    name = "EE相关"
+    url = "/categories/AI/"
+    weight = 7
+
+  [[menu.main]]
+    name = "投资相关"
+    url = "/categories/AI/"
+    weight = 8
+  
+  [[menu.main]]
     name = "ABOUT"
     url = "/about/"
     weight = 7
