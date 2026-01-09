@@ -2,7 +2,7 @@
 title: "Ai Tools Checklist"
 date: 2026-01-06
 categories: ["AI"]
-tags: ["ai", "Python"]
+tags: ["Python", "ai"]
 ---
 
 
