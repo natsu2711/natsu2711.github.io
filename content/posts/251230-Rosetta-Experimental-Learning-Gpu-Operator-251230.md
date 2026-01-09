@@ -2,7 +2,7 @@
 title: "Rosetta Experimental Learning Gpu Operator 251230"
 date: 2025-12-30
 categories: ["CS"]
-tags: ["learning", "C++", "Python", "Pytorch"]
+tags: ["Python", "C++", "learning", "Pytorch"]
 ---
 
 
