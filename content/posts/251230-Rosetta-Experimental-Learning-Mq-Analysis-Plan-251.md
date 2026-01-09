@@ -2,7 +2,7 @@
 title: "Rosetta Experimental Learning Mq Analysis Plan 251230"
 date: 2025-12-30
 categories: ["AI"]
-tags: ["learning", "Java"]
+tags: ["Java", "learning"]
 ---
 
 
