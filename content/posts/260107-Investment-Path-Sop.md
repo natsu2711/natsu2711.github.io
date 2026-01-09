@@ -2,7 +2,7 @@
 title: "Investment Path Sop"
 date: 2026-01-07
 categories: ["投资"]
-tags: ["sop", "investment"]
+tags: ["investment", "sop"]
 ---
 
 
