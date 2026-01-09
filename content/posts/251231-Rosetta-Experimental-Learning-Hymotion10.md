@@ -2,7 +2,7 @@
 title: "Rosetta Experimental Learning Hymotion1.0"
 date: 2025-12-31
 categories: ["AI"]
-tags: ["learning", "Python"]
+tags: ["Python", "learning"]
 ---
 
 
