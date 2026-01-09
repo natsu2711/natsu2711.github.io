@@ -2,7 +2,7 @@
 title: "Edge Ai Hello World 251231"
 date: 2025-12-31
 categories: ["AI"]
-tags: ["ai", "Python", "Pytorch"]
+tags: ["Python", "ai", "Pytorch"]
 ---
 
 
