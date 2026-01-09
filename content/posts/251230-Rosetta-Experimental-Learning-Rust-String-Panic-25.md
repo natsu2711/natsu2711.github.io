@@ -2,7 +2,7 @@
 title: "Rosetta Experimental Learning Rust String Panic 251230"
 date: 2025-12-30
 categories: ["AI"]
-tags: ["learning", "Rust"]
+tags: ["Rust", "learning"]
 ---
 
 
