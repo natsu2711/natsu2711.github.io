@@ -2,7 +2,7 @@
 title: "Rosetta Experimental Learning Rocket Gnc 251230"
 date: 2025-12-30
 categories: ["数学物理"]
-tags: ["learning", "Python", "Rust"]
+tags: ["Rust", "Python", "learning"]
 ---
 
 
