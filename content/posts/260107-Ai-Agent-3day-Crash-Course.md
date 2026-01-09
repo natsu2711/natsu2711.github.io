@@ -2,7 +2,7 @@
 title: "Ai Agent 3day Crash Course"
 date: 2026-01-07
 categories: ["AI"]
-tags: ["agent", "ai", "Python", "crash-course", "React"]
+tags: ["agent", "crash-course", "Python", "React", "ai"]
 ---
 
 
